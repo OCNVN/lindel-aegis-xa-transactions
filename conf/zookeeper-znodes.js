@@ -40,12 +40,12 @@ CLIENT_ZNODES.TRANSACTION_CLIENT_ZNODE = function(clientId, distributedTransacti
 	return TRANSACTION_ZNODES.TRANSACTION_CLIENTS_NAMESPACE(distributedTransactionId) + "/" + clientId;
 }
 
-CLIENT_ZNODES.TRANSACTIONS_NAMESPACE = function(clientId, distributedTransactionId){
+CLIENT_ZNODES.TRANSACTIONS_NAMESPACES = function(clientId, distributedTransactionId){
 	return TRANSACTION_ZNODES.TRANSACTIONS_NAMESPACE(distributedTransactionId) + "/" + clientId;
 }
 
 // Namespace de resultados
-CLIENT_ZNODES.RESULTS_NAMESPACE = function(clientId, distributedTransactionId){
+CLIENT_ZNODES.RESULTS_NAMESPACES = function(clientId, distributedTransactionId){
 	return TRANSACTION_ZNODES.RESULTS_NAMESPACE(distributedTransactionId) + "/" + clientId;
 }
 
