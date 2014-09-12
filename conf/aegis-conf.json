@@ -1,0 +1,52 @@
+{
+	"distributed-transactions": [
+		{
+			"id": "post-ejemplo",
+			"master-replicas": 3,
+			"workers-schedule": [
+				{
+					"name": "almacenar-postgres",
+					"schedule-order": 0,
+					"parallelism": 8,
+					"id-offset": 0
+				},
+				{
+					"name": "almacenar-redis",
+					"schedule-order": 1,
+					"parallelism": 8,
+					"id-offset": 0
+				},
+				{
+					"name": "almacenar-elaticsearch",
+					"schedule-order": 2,
+					"parallelism": 8,
+					"id-offset": 0
+				}
+			]
+		},
+		{
+			"id": "logeo",
+			"master-replicas": 3,
+			"workers-schedule": [
+				{
+					"name": "logeo-postgres",
+					"schedule-order": 0,
+					"parallelism": 8,
+					"id-offset": 0
+				},
+				{
+					"name": "actualizar-mongodb",
+					"schedule-order": 1,
+					"parallelism": 8,
+					"id-offset": 0
+				},
+				{
+					"name": "sesion-redis",
+					"schedule-order": 2,
+					"parallelism": 8,
+					"id-offset": 0
+				}
+			]
+		}
+	]
+}

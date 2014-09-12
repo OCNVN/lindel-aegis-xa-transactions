@@ -1,0 +1,14 @@
+{
+  "name": "aegis-distributed-transactions",
+  "version": "0.0.1",
+  "description": "Implementacion del API de transacciones distribuidas Aegis en Nodejs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "zookeeper": "*"
+  },
+  "author": "Carlos Lucero <c.lucero@lindelit.com> (http://www.lindelit.com/)",
+  "license": "BSD"
+}
