@@ -7,7 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "zookeeper": "*"
+    "zookeeper": "*",
+    "synchronize": "*",
+    "async": "*"
   },
   "author": "Carlos Lucero <c.lucero@lindelit.com> (http://www.lindelit.com/)",
   "license": "BSD"

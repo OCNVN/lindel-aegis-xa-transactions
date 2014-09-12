@@ -15,6 +15,7 @@ APPLICATION_ZNODES.STATUS_NAMESPACE = APPLICATION_ZNODES.APP_NAMESPACE + "/statu
 // Namespace de transacciones-clientes
 APPLICATION_ZNODES.TRANSACTION_CLIENT_NAMESPACE = APPLICATION_ZNODES.APP_NAMESPACE + "/transaction-client";
 
+
 var TRANSACTION_ZNODES = {};
 
 // Namespace de transacciones
@@ -30,6 +31,7 @@ TRANSACTION_ZNODES.RESULTS_NAMESPACE = function(distributedTransactionId){
 TRANSACTION_ZNODES.TRANSACTION_CLIENTS_NAMESPACE = function(distributedTransactionId){
 	return APPLICATION_ZNODES.TRANSACTION_CLIENT_NAMESPACE + "/" + distributedTransactionId;
 }
+
 
 var CLIENT_ZNODES = {};
 
@@ -47,6 +49,13 @@ CLIENT_ZNODES.RESULTS_NAMESPACE = function(clientId, distributedTransactionId){
 	return TRANSACTION_ZNODES.RESULTS_NAMESPACE(distributedTransactionId) + "/" + clientId;
 }
 
+
+var TRANSACTION_SUBFIXES = {};
+
+// Subfijo para transacciones
+TRANSACTION_SUBFIXES.TRANSACTION_ZNODE_SUBFIX = "transaction-";
+
 exports.APPLICATION_ZNODES = APPLICATION_ZNODES;
 exports.TRANSACTION_ZNODES = TRANSACTION_ZNODES;
 exports.CLIENT_ZNODES = CLIENT_ZNODES;
+exports.TRANSACTION_SUBFIXES = TRANSACTION_SUBFIXES;
