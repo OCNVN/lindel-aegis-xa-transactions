@@ -8,7 +8,8 @@
   },
   "dependencies": {
   	"node-zookeeper-client": "*",
-    "async": "*"
+    "async": "*",
+    "log4js": "*"
   },
   "author": "Carlos Lucero <c.lucero@lindelit.com> (http://www.lindelit.com/)",
   "license": "BSD"
