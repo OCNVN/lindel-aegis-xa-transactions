@@ -1,7 +1,7 @@
 var APPLICATION_ZNODES = {};
 
 // Root
-APPLICATION_ZNODES.APP_NAMESPACE = "/ADT";
+APPLICATION_ZNODES.APP_NAMESPACE = "/XATransactions";
 // Namespace de transacciones
 APPLICATION_ZNODES.TRANSACTIONS_NAMESPACE = APPLICATION_ZNODES.APP_NAMESPACE + "/transactions";
 // Namespace de resultados
@@ -32,6 +32,21 @@ TRANSACTION_ZNODES.TRANSACTION_CLIENTS_NAMESPACE = function(distributedTransacti
 	return APPLICATION_ZNODES.TRANSACTION_CLIENT_NAMESPACE + "/" + distributedTransactionId;
 }
 
+TRANSACTION_ZNODES.WORKERS_NAMESPACE = function(distributedTransactionId){
+	return APPLICATION_ZNODES.WORKERS_NAMESPACE + "/" + distributedTransactionId;
+}
+
+TRANSACTION_ZNODES.ASSIGNS_NAMESPACE = function(distributedTransactionId){
+	return APPLICATION_ZNODES.ASSIGNS_NAMESPACE + "/" + distributedTransactionId;
+}
+
+TRANSACTION_ZNODES.STATUS_NAMESPACE = function(distributedTransactionId){
+	return APPLICATION_ZNODES.STATUS_NAMESPACE + "/" + distributedTransactionId;
+}
+
+
+
+
 
 var CLIENT_ZNODES = {};
 
@@ -50,6 +65,29 @@ CLIENT_ZNODES.RESULTS_NAMESPACES = function(clientId, distributedTransactionId){
 }
 
 
+
+
+var WORKER_ZNODES = {};
+
+// Namespace de worker
+WORKER_ZNODES.WORKER_NAMESPACE = function(workerScheduleName, distributedTransactionId){
+	return TRANSACTION_ZNODES.WORKERS_NAMESPACE(distributedTransactionId) + "/" + workerScheduleName;
+}
+
+// Namespace de asignaciones
+WORKER_ZNODES.ASSIGN_NAMESPACE = function(workerScheduleName, distributedTransactionId){
+	return TRANSACTION_ZNODES.ASSIGNS_NAMESPACE(distributedTransactionId) + "/" + workerScheduleName;
+}
+
+WORKER_ZNODES.STATUS_NAMESPACE = function(workerScheduleName, distributedTransactionId){
+	return TRANSACTION_ZNODES.STATUS_NAMESPACE(distributedTransactionId) + "/" + workerScheduleName;
+}
+
+
+
+
+
+
 var TRANSACTION_SUBFIXES = {};
 
 // Subfijo para transacciones
@@ -59,3 +97,4 @@ exports.APPLICATION_ZNODES = APPLICATION_ZNODES;
 exports.TRANSACTION_ZNODES = TRANSACTION_ZNODES;
 exports.CLIENT_ZNODES = CLIENT_ZNODES;
 exports.TRANSACTION_SUBFIXES = TRANSACTION_SUBFIXES;
+exports.WORKER_ZNODES = WORKER_ZNODES;

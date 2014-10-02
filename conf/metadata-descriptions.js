@@ -1,0 +1,8 @@
+var ASSIGN_METADATA_NODES = {};
+
+// Nodo de metadatos de asignacion para transacciones XA
+ASSIGN_METADATA_NODES.XA_ASSIGN_METADATA_NODE = "XA-ASSIGN-METADATA";
+// Child para el client-id
+ASSIGN_METADATA_NODES.CLIENT_ID_CHILD = "client-id";
+
+exports.ASSIGN_METADATA_NODES = ASSIGN_METADATA_NODES;
