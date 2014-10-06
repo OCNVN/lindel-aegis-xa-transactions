@@ -1,5 +1,5 @@
 {
-  "name": "aegis-distributed-transactions",
+  "name": "aegis-xa-transactions",
   "version": "0.0.1",
   "description": "Implementacion del API de transacciones distribuidas Aegis en Nodejs",
   "main": "index.js",
