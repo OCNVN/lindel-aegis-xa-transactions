@@ -1,9 +1,10 @@
-var DistributedTransactionClient = require("./distributed-transaction-client").DistributedTransactionClient;
+var DistributedTransactionClient = require("aegis-xa-transactions").XATransactionClient;
 
 var distributedTransactionClient = DistributedTransactionClient("cliente-node6", ['logeo', 'post-ejemplo']);
 
 // LOGGER
 var log4js = require('log4js');
+log4js.configure('./conf/log4js.json', {});
 var logger = log4js.getLogger('lib/prueba-client.js');
 
 distributedTransactionClient.init(function(error, results){

@@ -1,6 +1,6 @@
-var	DistributedTransactionWorker = require("./distributed-transaction-worker").DistributedTransactionWorker;
+var	XATransactionResource = require("aegis-xa-transactions").XATransactionResource;
 
-var distributedTransactionWorker = DistributedTransactionWorker("nodejs-almacenar-elaticsearch", 'signin-aegis', 'nodejs-almacenar-elaticsearch-1', false, true, function(data){
+var distributedTransactionWorker = XATransactionResource("nodejs-almacenar-elaticsearch", 'signin-aegis', 'nodejs-almacenar-elaticsearch-1', false, true, function(data){
     data.prueba = data.prueba + "->NODJS almacenar elasticsearch";
 
     return data;
@@ -8,6 +8,7 @@ var distributedTransactionWorker = DistributedTransactionWorker("nodejs-almacena
 
 // LOGGER
 var log4js = require('log4js');
+log4js.configure('./conf/log4js.json', {});
 var logger = log4js.getLogger('lib/prueba-worker3.js');
 
 
